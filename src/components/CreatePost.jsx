@@ -103,13 +103,15 @@ const CreatePost = ({ user, handleAddPost }) => {
   }
   return (
     <>
-      <h1>Create New Post</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="bg-lime-500 p-1">
+    <h1 className="font-extrabold text-black p-4">Create New Post</h1>
+      <form onSubmit={handleSubmit} className="">
         <input
           type="text"
           placeholder="Add Post Content"
           onChange={(e) => setContent(e.target.value)}
           value={content}
+          className="h-7 m-1 text-black"
         />
         {/*
           what is e.target.files
@@ -125,9 +127,12 @@ const CreatePost = ({ user, handleAddPost }) => {
           - we can then access the input element by using imageInputRef.current
           - we can then set the value of the input element to an empty string
         */}
-        <input type="file" onChange={(e) => setImage(e.target.files[0])} ref={imageInputRef} />
-        <button type="submit">Submit Post</button>
+        <input type="file" onChange={(e) => setImage(e.target.files[0])} ref={imageInputRef} className="h-8" />
+        <button type="submit" className="font-medium border-2 border-solid border-black p-1 bg-slate-200 text-black  active:border-dashed">Submit Post</button>
       </form>
+
+    </div>
+      
     </>
   );
 };
